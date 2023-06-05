@@ -15,7 +15,7 @@ val logbackVersion = "1.2.3"
 
 lazy val root = (project in file("."))
     .settings(
-        name := "scala-money-operations",
+        name := "accounts",
         Compile / run / mainClass := Some("misis.AkkaKafkaDemo"),
         libraryDependencies ++= Seq(
             // JSON

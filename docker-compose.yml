@@ -12,7 +12,7 @@ services:
       - "8001:8081"
     build:
       context: ./
-      dockerfile: Dockerfile.accountsService
+      dockerfile: Dockerfile.accounts
 
   accounts-sv2:
     container_name: accounts-sv2
@@ -22,7 +22,7 @@ services:
       - "8002:8081"
     build:
       context: ./
-      dockerfile: Dockerfile.accountsService
+      dockerfile: Dockerfile.accounts
 
   operations-sv:
     container_name: operations-sv
@@ -32,7 +32,7 @@ services:
       - "8009:8081"
     build:
       context: ./
-      dockerfile: Dockerfile.operationsService
+      dockerfile: Dockerfile.operations
 
   fees-sv1:
     container_name: fees-sv1
@@ -42,7 +42,7 @@ services:
       - "8011:8081"
     build:
       context: ./
-      dockerfile: Dockerfile.feesService
+      dockerfile: Dockerfile.fees
 
   cashbacks-sv1:
     container_name: cashbacks-sv1
@@ -52,7 +52,7 @@ services:
       - "8012:8081"
     build:
       context: ./
-      dockerfile: Dockerfile.cashbacksService
+      dockerfile: Dockerfile.cashbacks
 
   zookeeper:
     image: wurstmeister/zookeeper
