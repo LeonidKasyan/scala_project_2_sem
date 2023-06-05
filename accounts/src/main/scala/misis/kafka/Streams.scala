@@ -29,11 +29,11 @@ class Streams(repository: Repository, groupId: Int)(implicit
         .mapAsync(1) { command =>
             repository.getAccount(command.accountId).map {
                 case Some(account) =>
-                    println(s"Account ${command.accountId} has balance: ${account.amount}")
+                    println(s"ACCOUNT ${command.accountId} CURRENTLY HAS A BALANCE OF: ${account.amount}")
                     command
                 case None =>
                     println(
-                        s"Account ${command.accountId} didn't found. Available accounts: ${repository.getAccountKeys()}"
+                        s"ACCOUNT ${command.accountId} NOT FOUND. AVAILABLE ACCOUNTS: ${repository.getAccountKeys()}"
                     )
                     command
             }

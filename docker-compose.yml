@@ -34,15 +34,15 @@ services:
       context: ./
       dockerfile: Dockerfile.operations
 
-  fees-sv1:
-    container_name: fees-sv1
-    image: fees-sv1
+  commission-sv1:
+    container_name: commission-sv1
+    image: commission-sv1
     env_file: .env
     ports:
       - "8011:8081"
     build:
       context: ./
-      dockerfile: Dockerfile.fees
+      dockerfile: Dockerfile.commission
 
   cashbacks-sv1:
     container_name: cashbacks-sv1

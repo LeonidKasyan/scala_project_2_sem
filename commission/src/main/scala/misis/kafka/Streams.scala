@@ -16,14 +16,14 @@ class Streams(repository: Repository, feePercent: Int)(implicit
     val system: ActorSystem,
     executionContext: ExecutionContext
 ) extends WithKafka {
-    override def group: String = "fees"
+    override def group: String = "commission"
     def bankAccountId: Int = 0
 
     kafkaSource[AccountToAck]
         .map { e =>
             if (!repository.accountFreeLimitExists(e.sourceId)) {
                 repository.createAccountLimit(e.sourceId)
-                println(s"ACCOUNT LIMIT CREATED FOR ACCOUNT #${e.sourceId}")
+                println(s"ACCOUNT LIMIT HAS BEEN SET FOR THE ACCOUNT #${e.sourceId}")
             }
             val limit =
                 repository

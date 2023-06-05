@@ -49,7 +49,7 @@ trait WithKafka {
         Source
             .single(command)
             .map { command =>
-                println(s"Send message $command to topic ${topicName.get}")
+                println(s"SENDING MESSAGE ${command} TO TOPIC ${topicName.get}")
                 command.asJson.noSpaces
             }
             .map { value =>
